@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class P10AnimalType {
+
+    public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        String animal = read.nextLine();
+        switch (animal) {
+            case "dog":
+                System.out.println("mammal"); break;
+            case "crocodile":
+            case "snake":
+            case "tortoise":
+                System.out.println("reptile"); break;
+            default:
+                System.out.println("unknown"); break;
+        }
+    }
+}
