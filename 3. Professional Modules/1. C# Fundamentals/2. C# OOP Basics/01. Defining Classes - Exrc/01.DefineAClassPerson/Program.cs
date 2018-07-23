@@ -7,87 +7,130 @@ public class Program
 {
     static void Main(string[] args)
     {
-        Dictionary<string, Engine> engines = new Dictionary<string, Engine>();
-        List<Car> cars = new List<Car>();
+        Dictionary<Trainer, List<Pokemon>> trainersCollection = new Dictionary<Trainer, List<Pokemon>>();
+        List<string> trainersName = new List<string>();
 
-        int n = int.Parse(Console.ReadLine());
-        for (int i = 0; i < n; i++)
+        while (true)
         {
-            string[] inputEngine = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+            string[] input = Console.ReadLine().Split().ToArray();
 
-            string model = inputEngine[0];
-            int power = int.Parse(inputEngine[1]);
-            int displacement = 0;
-            string efficiency = "n/a";
-
-            if (inputEngine.Length == 3)
+            if (input[0] == "Tournament")
             {
-                bool isNum = int.TryParse(inputEngine[2], out displacement);
-                if (!isNum)
+                break;
+            }
+
+            string trainerName = input[0];
+            string pokemonName = input[1];
+            string element = input[2];
+            int health = int.Parse(input[3]);
+
+            Pokemon pokemon = new Pokemon(pokemonName, element, health);
+            Trainer trainer = new Trainer(trainerName);
+            trainer.Pokemons.Add(pokemon);
+            if (trainersName.Contains(trainerName))
+            {
+                foreach (var train in trainersCollection)
                 {
-                    efficiency = inputEngine[2];
+                    if (train.Key.Name == trainerName)
+                    {
+                        train.Value.Add(pokemon);
+                    }
                 }
-            }
-            else if (inputEngine.Length == 4)
-            {
-                displacement = int.Parse(inputEngine[2]);
-                efficiency = inputEngine[3];
-            }
-            Engine newEngine = new Engine(model, power, displacement, efficiency);
-            engines[model] = newEngine;
-        }
-
-        int m = int.Parse(Console.ReadLine());
-        for (int i = 0; i < m; i++)
-        {
-            string[] carInput = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
-
-            string model = carInput[0];
-            string engine = carInput[1];
-            int weight = 0;
-            string color = "n/a";
-
-            if (carInput.Length == 3)
-            {
-                bool isNum = int.TryParse(carInput[2], out weight);
-
-                if (!isNum)
-                {
-                    color = carInput[2];
-                }
-            }
-            else if (carInput.Length == 4)
-            {
-                weight = int.Parse(carInput[2]);
-                color = carInput[3];
-            }
-            Car newCar = new Car(model, engines[engine], weight, color);
-            cars.Add(newCar);
-        }
-
-        foreach (var car in cars)
-        {
-            Console.WriteLine($"{car.Model}:");
-            Console.WriteLine($" {car.Engine.Model}:");
-            Console.WriteLine($"  Power: {car.Engine.Power}");
-            if (car.Engine.Displacement == 0)
-            {
-                Console.WriteLine($"  Displacement: n/a");
             }
             else
             {
-                Console.WriteLine($"  Displacement: {car.Engine.Displacement}");
+                trainersName.Add(trainerName);
+                trainersCollection[trainer] = new List<Pokemon>();
+                trainersCollection[trainer].Add(pokemon);
             }
-            Console.WriteLine($"  Efficiency: {car.Engine.Efficiency}");
-            if (car.Weight == 0)
+        }
+        bool containsElement = false;
+        while (true)
+        {
+            string input = Console.ReadLine();
+
+            if (input == "End")
             {
-                Console.WriteLine($" Weight: n/a");
+                break;
             }
-            else
+
+            if (input == "Fire")
             {
-                Console.WriteLine($" Weight: {car.Weight}");
+                foreach (var trainer in trainersCollection)
+                {
+                    containsElement = false;
+                    foreach (var pokemon in trainer.Value)
+                    {
+                        if (pokemon.Element == "Fire")
+                        {
+                            trainer.Key.IncreaseBadges();
+                            containsElement = true;
+                            break;
+                        }
+                    }
+                    if (!containsElement)
+                    {
+                        foreach (var pokemon in trainer.Value)
+                        {
+                            pokemon.RemoveHealth();
+                        }
+                        trainer.Value.RemoveAll(x => x.Health <= 0);
+                    }
+                }
             }
-            Console.WriteLine($" Color: {car.Color}");
+            else if (input == "Water")
+            {
+                foreach (var trainer in trainersCollection)
+                {
+                    containsElement = false;
+                    foreach (var pokemon in trainer.Value)
+                    {
+                        if (pokemon.Element == "Water")
+                        {
+                            trainer.Key.IncreaseBadges();
+                            containsElement = true;
+                            break;
+                        }
+                    }
+                    if (!containsElement)
+                    {
+                        foreach (var pokemon in trainer.Value)
+                        {
+                            pokemon.RemoveHealth();
+                        }
+                        trainer.Value.RemoveAll(x => x.Health <= 0);
+                    }
+                }
+            }
+            else if (input == "Electricity")
+            {
+                foreach (var trainer in trainersCollection)
+                {
+                    containsElement = false;
+                    foreach (var pokemon in trainer.Value)
+                    {
+                        if (pokemon.Element == "Electricity")
+                        {
+                            trainer.Key.IncreaseBadges();
+                            containsElement = true;
+                            break;
+                        }
+                    }
+                    if (!containsElement)
+                    {
+                        foreach (var pokemon in trainer.Value)
+                        {
+                            pokemon.RemoveHealth();
+                        }
+                        trainer.Value.RemoveAll(x => x.Health <= 0);
+                    }
+                }
+            }          
+        }
+
+        foreach (var trainer in trainersCollection.OrderByDescending(x => x.Key.Badges))
+        {
+            Console.WriteLine($"{trainer.Key.Name} {trainer.Key.Badges} {trainer.Value.Count}");
         }
     }
 }
