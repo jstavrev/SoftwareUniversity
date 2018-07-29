@@ -9,7 +9,6 @@
     <Folder Include="Bags\Common\" />
     <Folder Include="Characters\Common\" />
     <Folder Include="Items\Contracts\" />
-    <Folder Include="Items\Common\" />
   </ItemGroup>
 
 </Project>
