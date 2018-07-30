@@ -5,10 +5,4 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Bags\Common\" />
-    <Folder Include="Characters\Common\" />
-    <Folder Include="Items\Contracts\" />
-  </ItemGroup>
-
 </Project>

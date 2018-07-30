@@ -4,7 +4,10 @@ using System.Text;
 
 namespace DungeonsAndCodeWizards.Bags
 {
-    class Satchel
+    public class Satchel : Bag
     {
+        public Satchel(int capacity = 20) : base(capacity)
+        {
+        }
     }
 }

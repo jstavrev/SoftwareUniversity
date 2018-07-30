@@ -4,7 +4,10 @@ using System.Text;
 
 namespace DungeonsAndCodeWizards.Items.Common
 {
-    class IItem
+    public enum ItemType
     {
+        ArmorRepairKit,
+        HealthPotion,
+        PoisonPotion
     }
 }

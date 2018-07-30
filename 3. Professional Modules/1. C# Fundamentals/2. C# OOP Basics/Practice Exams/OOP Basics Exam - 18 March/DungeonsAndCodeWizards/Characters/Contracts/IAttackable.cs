@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DungeonsAndCodeWizards.Characters.Contracts
 {
-    class IAttackable
+    public interface IAttackable
     {
+        void Attack(Character character);
     }
 }

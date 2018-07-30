@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DungeonsAndCodeWizards.Characters.Contracts
 {
-    class IHealable
+    public interface IHealable
     {
+        void Heal(Character character);
     }
 }
