@@ -1,14 +1,18 @@
 ﻿using System;
 
 
-class Program
+public class Program
 {
     static void Main(string[] args)
     {
-        Dog dog = new Dog();
+        RandomList list = new RandomList();
 
-        dog.Eat();
-        dog.Bark();
+        list.Add("dasbas");
+        list.Add("gazvaz");
+        list.Add("gezbez");
+
+        string random = list.RandomString(list);
+        Console.WriteLine(random);
     }
 }
 
