@@ -3,38 +3,52 @@
 public class CircularQueue<T>
 {
     private const int DefaultCapacity = 4;
+    private T[] arr;
+    private int startIndex = 0;
+    private int endIndex = 0;
 
     public int Count { get; private set; }
 
     public CircularQueue(int capacity = DefaultCapacity)
     {
-        // TODO
-        throw new NotImplementedException();
+        arr = new T[capacity];
+        this.Count = 0;
     }
 
     public void Enqueue(T element)
     {
-        // TODO
-        throw new NotImplementedException();
+        if (this.Count == arr.Length)
+        {
+            Resize();
+        }
+
+        arr[endIndex] = element;
+        endIndex++;
+        this.Count++;
     }
 
     private void Resize()
     {
-        // TODO
-        throw new NotImplementedException();
+        T[] newArr = new T[arr.Length * 2];
+        CopyAllElements(newArr);
     }
 
     private void CopyAllElements(T[] newArray)
     {
-        // TODO
-        throw new NotImplementedException();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            newArray[i] = arr[i];
+        }
     }
 
     // Should throw InvalidOperationException if the queue is empty
     public T Dequeue()
     {
-        // TODO
-        throw new NotImplementedException();
+        T element = arr[startIndex];
+        arr[startIndex] = default(T);
+        startIndex++;
+
+        return element;
     }
 
     public T[] ToArray()
