@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Reverse Array", "01. Reverse Array\01. Reverse Array.csproj", "{8E325995-0049-4532-BF11-B58E2B54210D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Reverse Array", "01. Reverse Array\01. Reverse Array.csproj", "{8E325995-0049-4532-BF11-B58E2B54210D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Nested Loops", "02. Nested Loops\02. Nested Loops.csproj", "{BEF8F66D-9494-4AA7-90A9-9AD66046F5AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Nested Loops", "02. Nested Loops\02. Nested Loops.csproj", "{BEF8F66D-9494-4AA7-90A9-9AD66046F5AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Combinations with Repetitions", "03. Combinations with Repetitions\03. Combinations with Repetitions.csproj", "{E9AA31D6-7482-4ED2-83EB-E0F0AD461204}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Combinations with Repetitions", "03. Combinations with Repetitions\03. Combinations with Repetitions.csproj", "{E9AA31D6-7482-4ED2-83EB-E0F0AD461204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Tower of Hanoi", "04. Tower of Hanoi\04. Tower of Hanoi.csproj", "{F01C0EC5-E5F3-4C95-B3A2-1ED19CD236F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Tower of Hanoi", "04. Tower of Hanoi\04. Tower of Hanoi.csproj", "{F01C0EC5-E5F3-4C95-B3A2-1ED19CD236F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Combinations without Repetition", "05. Combinations without Repetition\05. Combinations without Repetition.csproj", "{22D459AA-EFD6-452B-92FD-36FF1B01B385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Combinations without Repetition", "05. Combinations without Repetition\05. Combinations without Repetition.csproj", "{22D459AA-EFD6-452B-92FD-36FF1B01B385}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Connected Areas in a Matrix", "06. Connected Areas in a Matrix\06. Connected Areas in a Matrix.csproj", "{68BDFE66-6805-4E1E-92BE-E77F82644210}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{22D459AA-EFD6-452B-92FD-36FF1B01B385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22D459AA-EFD6-452B-92FD-36FF1B01B385}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22D459AA-EFD6-452B-92FD-36FF1B01B385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68BDFE66-6805-4E1E-92BE-E77F82644210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68BDFE66-6805-4E1E-92BE-E77F82644210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68BDFE66-6805-4E1E-92BE-E77F82644210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68BDFE66-6805-4E1E-92BE-E77F82644210}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
