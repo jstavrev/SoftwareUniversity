@@ -1,0 +1,24 @@
+﻿@model DogsViewModel
+<h2>Add dog:</h2>
+
+<form asp-controller="Dogs" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Name"></label><br />
+        <input asp-for="@Model.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Age" class="redHeading"></label><br />
+        <input asp-for="@Model.Age" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Breed" class="redHeading"></label><br />
+        <input asp-for="@Model.Breed" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.ImageURL" class="redHeading"></label><br />
+        <input asp-for="@Model.ImageURL" />
+    </div>
+
+    <button type="submit">Add dog</button>
+</form>
+

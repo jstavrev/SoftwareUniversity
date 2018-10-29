@@ -1,0 +1,16 @@
+﻿@model HomeViewModel
+
+<h1 align="center">@Model.Header</h1>
+
+<div>
+    <ul style="list-style: none;">
+        @foreach (var dog in Model.Dogs)
+        {
+            <li align="center"><a asp-controller="Dogs" asp-action="Details" asp-route-id="@dog.Id">@dog.Name</a></li>
+        }
+    </ul>
+
+    <div align="center">
+        <input type="button" value="Add Dog" onclick="location.href='@Url.Action("Add", "Dogs")'" />
+    </div>
+</div>

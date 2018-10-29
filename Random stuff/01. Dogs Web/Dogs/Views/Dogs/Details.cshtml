@@ -1,0 +1,16 @@
+﻿@model DogsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+
+        Name: @Model.Name
+        Age: @Model.Age
+        Breed: @Model.Breed
+
+</p>
+
+<img src=@Model.ImageURL alt="Italian Trulli" class="imageSize">
